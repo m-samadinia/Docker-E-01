@@ -27,6 +27,18 @@ pip install -r requirements.txt
 <b>Step 5.</b> run app
 <pre><code>python main.py</code></pre>
 
+<h2> Dockerizing</h2>
+You can Dockerizing app with two way
+
+<b>solution 1.</b>
+<pre><code>docker build -t e-01 .</code>
+<code>docker run -d --name fastapi_docker -p 8080:8080 --restart always e-01</code></pre>
+<br/>
+<b>solution 2.</b>
+<pre><code>docker-compose up -d</code></pre>
+<br/>
+
+
 <h2> Notices</h2>
 You can see APIDoc
 <pre><code>http://localhost:8080/redoc   or</code>
