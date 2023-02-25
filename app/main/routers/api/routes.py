@@ -1,13 +1,19 @@
 from fastapi import APIRouter
+from starlette.responses import PlainTextResponse
 
 router = APIRouter()
 
 
-@router.get('/hello')
+@router.get('/helloworld', response_class=PlainTextResponse)
 def hello(name: str = 'Stranger'):
-    return f'Hello {name}'
+    return PlainTextResponse(content=f'Hello {name}', status_code=200)
 
 
-@router.get('/author')
+@router.get('/author', response_class=PlainTextResponse)
 def author():
-    return 'Mehdi Samadinia'
+    return PlainTextResponse(content='Mehdi Samadinia', status_code=200)
+
+
+@router.get('/health', response_class=PlainTextResponse)
+def health():
+    return PlainTextResponse(content="Ok", status_code=200)
