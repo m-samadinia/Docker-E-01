@@ -1,7 +1,7 @@
 version: '1'
 
 services:
-  app:
+  docker-e-01:
     build: .
     environment:
       DEFAULT_PORT: 8080

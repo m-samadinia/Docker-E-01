@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: msn
+  namespace: test
+  labels:
+    app: msn
+    version: v1
+spec:
+  containers:
+    - name: fastapi
+      image: mehdisn/docker_exercises:latest
+      imagePullPolicy: Always
+      ports:
+        - name: web
+          containerPort: 8080
+          protocol: TCP
+      livenessProbe:
+        httpGet:
+          scheme: HTTP
+          path: /api/routes/health
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 5
+      readinessProbe:
+        httpGet:
+          scheme: HTTP
+          path: /api/routes/health
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 5
+      lifecycle:
+        preStop:
+          exec:
+            command: ["sleep", "15"]
+  terminationGracePeriodSeconds: 30

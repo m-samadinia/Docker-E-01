@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: msn-replicaset
+  namespace: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: msn
+  template:
+    metadata:
+      labels:
+        app: msn
+    spec:
+      containers:
+      - name: fastapi
+        image: mehdisn/docker_exercises:latest

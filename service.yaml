@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: msn-service
+  namespace: test
+spec:
+  selector:
+    app: msn
+    version: v1
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: non-secure
+      targetPort: 8080
+      nodePort: 30445
+
