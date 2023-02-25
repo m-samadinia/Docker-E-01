@@ -1,6 +1,6 @@
 from . import SERVER_NAME, VERSION
 from fastapi import FastAPI
-from .routers.api.routes import router
+from .routers import router
 
 
 def create_app() -> FastAPI:
