@@ -42,4 +42,9 @@ You can Dockerizing app with two way
 <h2> Notices</h2>
 You can see APIDoc
 <pre><code>http://localhost:8080/redoc   or</code>
-<code>http://localhost:8080/docs   </code></pre> 
+<code>http://localhost:8080/docs   </code></pre>
+
+
+<h2> Usage Example</h2>
+<pre><code>http://localhost:8080/api/routes/helloworld</code></pre> 
+<pre><code>http://localhost:8080/api/routes/author</code>
